@@ -1,0 +1,681 @@
+/* ============================================
+   ISLAMIC SPIRITUAL APP - CSS STYLES
+   Lead Designer: Nejwa ❤️
+   ============================================ */
+
+/* ============================================
+   1. CSS VARIABLES - COLOR PALETTE
+   ============================================ */
+:root {
+    /* Light Theme Colors */
+    --primary-green: #2E7D32;
+    --accent-green: #3FA796;
+    --light-green: #66BB6A;
+    --cream: #FDFCF3;
+    --white: #FFFFFF;
+    --soft-gray: #E6E6E6;
+    --text-dark: #1B4332;
+    --text-light: #555555;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    
+    /* Dark Theme Colors */
+    --dark-bg: #0D1B0F;
+    --dark-card: #1A2E1D;
+    --dark-green: #2E7D32;
+    --dark-text: #E6E6E6;
+    --dark-text-secondary: #B8B8B8;
+    --dark-shadow: rgba(0, 0, 0, 0.5);
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    
+    /* Border Radius */
+    --radius-sm: 10px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+}
+
+/* ============================================
+   2. DARK THEME
+   ============================================ */
+.dark-theme {
+    --primary-green: #4CAF50;
+    --accent-green: #66BB6A;
+    --light-green: #81C784;
+    --cream: #0D1B0F;
+    --white: #1A2E1D;
+    --soft-gray: #2E3D33;
+    --text-dark: #E6E6E6;
+    --text-light: #B8B8B8;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --card-bg: rgba(26, 46, 29, 0.95);
+}
+
+/* ============================================
+   3. RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   4. TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+    transition: color var(--transition-normal);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    transition: color var(--transition-normal);
+}
+
+/* Arabic Text Support */
+.arabic {
+    font-family: 'Amiri', 'Arabic Typesetting', 'Traditional Arabic', serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 1.2em;
+    line-height: 2;
+}
+
+/* ============================================
+   5. HEADER & NAVIGATION
+   ============================================ */
+header {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all var(--transition-normal);
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   6. THEME TOGGLE BUTTON
+   ============================================ */
+.theme-toggle {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 15px var(--shadow);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   7. CONTAINER & LAYOUT
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.section {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   8. CARDS
+   ============================================ */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--soft-gray);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+    border-color: var(--primary-green);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--soft-gray);
+}
+
+.card-title {
+    color: var(--primary-green);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--accent-green);
+}
+
+.card-content {
+    color: var(--text-light);
+}
+
+/* ============================================
+   9. BUTTONS
+   ============================================ */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    box-shadow: 0 3px 10px var(--shadow);
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent-green);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   10. MOOD SELECTION CARDS
+   ============================================ */
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.mood-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.mood-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    border-color: var(--primary-green);
+    box-shadow: 0 8px 20px var(--shadow);
+    background: var(--primary-green);
+    color: var(--white);
+}
+
+.mood-card:active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.5);
+}
+
+.mood-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-normal);
+}
+
+.mood-card:hover .mood-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.mood-label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ============================================
+   11. DUA & VERSE CARDS
+   ============================================ */
+.dua-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(46, 125, 50, 0.1) 100%);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid var(--primary-green);
+    transition: all var(--transition-normal);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.dua-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.dua-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dua-translation {
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: var(--spacing-sm);
+}
+
+/* ============================================
+   12. FORMS & INPUTS
+   ============================================ */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--soft-gray);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-dark);
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================
+   13. PRAYER TIMES CARD
+   ============================================ */
+.prayer-times {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.prayer-item {
+    background: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    border: 2px solid var(--soft-gray);
+    transition: all var(--transition-normal);
+}
+
+.prayer-item:hover {
+    border-color: var(--primary-green);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.prayer-name {
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.prayer-time {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   14. LOADING SPINNER
+   ============================================ */
+.loader {
+    border: 4px solid var(--soft-gray);
+    border-top: 4px solid var(--primary-green);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: var(--spacing-lg) auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   15. FOOTER
+   ============================================ */
+footer {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    border-top: 2px solid var(--soft-gray);
+    box-shadow: 0 -2px 10px var(--shadow);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+.footer-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.footer-link:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+/* ============================================
+   16. RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .container {
+        padding: var(--spacing-md);
+    }
+    
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .prayer-times {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card {
+        padding: var(--spacing-md);
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .prayer-times {
+        grid-template-columns: 1fr;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   17. UTILITY CLASSES
+   ============================================ */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.glow {
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.5);
+}
+
+/* ============================================
+   18. SMOOTH SCROLLBAR STYLING (OPTIONAL)
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--soft-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+}
+
+/* ============================================
+   END OF STYLES
+   Ready for your team to integrate! 🌸
+   ============================================ */
+
