@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islamic Spiritual App - Nejwa's Design</title>
-    <!-- CSS Styles -->
     <link rel="stylesheet" href="style.css">
-    <!-- Optional: Add Google Fonts for Arabic text -->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Header with Navigation -->
+
+    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#" class="logo">
                 <span class="logo-icon">🕌</span>
                 <span>Spiritual Guide</span>
             </a>
+
             <nav>
                 <a href="#" class="nav-link">Home</a>
                 <a href="#" class="nav-link">Prayers</a>
@@ -29,44 +32,51 @@
         </div>
     </header>
 
-    <!-- Main Container -->
+    <!-- Main -->
     <main class="container">
+
         <!-- Hero Section -->
         <section class="section">
             <h1 class="text-center">Welcome to Your Spiritual Journey</h1>
             <p class="text-center">Choose your mood and find the perfect guidance</p>
         </section>
 
-        <!-- Mood Selection Section -->
+        <!-- Mood Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">How are you feeling today?</h2>
                     <span class="card-icon">💚</span>
                 </div>
+
                 <div class="card-content">
                     <div class="mood-grid">
-                        <div class="mood-card">
+                        <div class="mood-card" data-mood="grateful">
                             <div class="mood-icon">😊</div>
                             <div class="mood-label">Happy</div>
                         </div>
-                        <div class="mood-card">
+
+                        <div class="mood-card" data-mood="sad">
                             <div class="mood-icon">😔</div>
                             <div class="mood-label">Sad</div>
                         </div>
-                        <div class="mood-card">
+
+                        <div class="mood-card" data-mood="anxious">
                             <div class="mood-icon">😰</div>
                             <div class="mood-label">Anxious</div>
                         </div>
-                        <div class="mood-card">
+
+                        <div class="mood-card" data-mood="unmotivated">
                             <div class="mood-icon">😴</div>
                             <div class="mood-label">Tired</div>
                         </div>
-                        <div class="mood-card">
+
+                        <div class="mood-card" data-mood="grateful">
                             <div class="mood-icon">🙏</div>
                             <div class="mood-label">Grateful</div>
                         </div>
-                        <div class="mood-card">
+
+                        <div class="mood-card" data-mood="grateful">
                             <div class="mood-icon">💪</div>
                             <div class="mood-label">Motivated</div>
                         </div>
@@ -75,13 +85,14 @@
             </div>
         </section>
 
-        <!-- Dua/Verse Section -->
+        <!-- Dua Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Today's Dua</h2>
                     <span class="card-icon">📿</span>
                 </div>
+
                 <div class="dua-card">
                     <p class="dua-text arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
                     <p class="dua-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
@@ -89,39 +100,50 @@
             </div>
         </section>
 
-        <!-- Prayer Times Section -->
+        <!-- Prayer Times & Tracker Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Prayer Times</h2>
                     <span class="card-icon">🕐</span>
                 </div>
+
                 <div class="prayer-times">
-                    <div class="prayer-item">
+
+                    <div class="prayer-item" data-prayer-name="fajr">
                         <div class="prayer-name">Fajr</div>
                         <div class="prayer-time">05:30</div>
+                        <button class="track-btn" data-prayer-name="fajr">Mark Complete</button>
                     </div>
-                    <div class="prayer-item">
+
+                    <div class="prayer-item" data-prayer-name="dhuhr">
                         <div class="prayer-name">Dhuhr</div>
                         <div class="prayer-time">12:15</div>
+                        <button class="track-btn" data-prayer-name="dhuhr">Mark Complete</button>
                     </div>
-                    <div class="prayer-item">
+
+                    <div class="prayer-item" data-prayer-name="asr">
                         <div class="prayer-name">Asr</div>
                         <div class="prayer-time">15:45</div>
+                        <button class="track-btn" data-prayer-name="asr">Mark Complete</button>
                     </div>
-                    <div class="prayer-item">
+
+                    <div class="prayer-item" data-prayer-name="maghrib">
                         <div class="prayer-name">Maghrib</div>
                         <div class="prayer-time">18:20</div>
+                        <button class="track-btn" data-prayer-name="maghrib">Mark Complete</button>
                     </div>
-                    <div class="prayer-item">
+
+                    <div class="prayer-item" data-prayer-name="isha">
                         <div class="prayer-name">Isha</div>
                         <div class="prayer-time">19:45</div>
+                        <button class="track-btn" data-prayer-name="isha">Mark Complete</button>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Action Buttons -->
         <section class="section text-center">
             <button class="btn btn-primary btn-large">Get Started</button>
             <button class="btn btn-secondary btn-large">Learn More</button>
@@ -140,8 +162,10 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Script -->
-    <script src="theme-toggle.js"></script>
-    <!-- Add your other JavaScript files here -->
+    <!-- Scripts -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/prayerTracker.js"></script>
+    <script src="js/moodLogic.js"></script>
+
 </body>
 </html>

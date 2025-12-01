@@ -673,6 +673,46 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-green);
 }
+/* ============================================
+   19. PRAYER TRACK BUTTON 
+   ============================================ */
+.track-btn {
+    padding: 4px 10px;           
+    font-size: 0.85rem;          
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    box-shadow: 0 2px 6px var(--shadow);
+    background: var(--white);    
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.track-btn:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px var(--shadow);
+}
+
+.track-btn:active {
+    transform: scale(0.95);
+}
+
+.track-btn:disabled {
+    background: #206e32; 
+    color: var(--white);
+    cursor: default;
+    box-shadow: none;
+    opacity: 0.9;
+    border: none;
+}
 
 /* ============================================
    END OF STYLES
