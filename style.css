@@ -1,9 +1,4 @@
 /* ============================================
-   ISLAMIC SPIRITUAL APP - CSS STYLES
-   Lead Designer: Nejwa ❤️
-   ============================================ */
-
-/* ============================================
    1. CSS VARIABLES - COLOR PALETTE
    ============================================ */
 :root {
@@ -419,48 +414,6 @@ nav {
     margin-top: var(--spacing-sm);
 }
 
-/* ============================================
-   12. FORMS & INPUTS
-   ============================================ */
-.form-group {
-    margin-bottom: var(--spacing-md);
-}
-
-label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea,
-select {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 2px solid var(--soft-gray);
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
-    background: var(--card-bg);
-    color: var(--text-dark);
-    transition: all var(--transition-fast);
-    font-family: inherit;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
 
 /* ============================================
    13. PRAYER TIMES CARD
@@ -655,7 +608,7 @@ footer {
 }
 
 /* ============================================
-   18. SMOOTH SCROLLBAR STYLING (OPTIONAL)
+   18. SMOOTH SCROLLBAR STYLING 
    ============================================ */
 ::-webkit-scrollbar {
     width: 10px;
@@ -713,9 +666,4 @@ footer {
     opacity: 0.9;
     border: none;
 }
-
-/* ============================================
-   END OF STYLES
-   Ready for your team to integrate! 🌸
-   ============================================ */
 
