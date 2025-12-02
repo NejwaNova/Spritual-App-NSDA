@@ -1,13 +1,5 @@
-/* ============================================
-   ISLAMIC SPIRITUAL APP - CSS STYLES
-   Lead Designer: Nejwa ❤️
-   ============================================ */
-
-/* ============================================
-   1. CSS VARIABLES - COLOR PALETTE
-   ============================================ */
 :root {
-    /* Light Theme Colors */
+    /* light colors */
     --primary-green: #2E7D32;
     --accent-green: #3FA796;
     --light-green: #66BB6A;
@@ -18,36 +10,34 @@
     --text-light: #555555;
     --shadow: rgba(0, 0, 0, 0.1);
     --card-bg: rgba(255, 255, 255, 0.95);
-    
-    /* Dark Theme Colors */
+
+    /* dark colors */
     --dark-bg: #0D1B0F;
     --dark-card: #1A2E1D;
     --dark-green: #2E7D32;
     --dark-text: #E6E6E6;
     --dark-text-secondary: #B8B8B8;
     --dark-shadow: rgba(0, 0, 0, 0.5);
-    
-    /* Spacing */
+
+    /* spacing for the whole website */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 20px;
     --spacing-lg: 30px;
     --spacing-xl: 40px;
     
-    /* Border Radius */
+    /* Border Radius properties*/
     --radius-sm: 10px;
     --radius-md: 15px;
     --radius-lg: 20px;
     
-    /* Transitions */
+    /* Transitions properties*/
     --transition-fast: 0.2s ease-in-out;
     --transition-normal: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
+
 }
 
-/* ============================================
-   2. DARK THEME
-   ============================================ */
 .dark-theme {
     --primary-green: #4CAF50;
     --accent-green: #66BB6A;
@@ -61,9 +51,6 @@
     --card-bg: rgba(26, 46, 29, 0.95);
 }
 
-/* ============================================
-   3. RESET & BASE STYLES
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -84,9 +71,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ============================================
-   4. TYPOGRAPHY
-   ============================================ */
+/* headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--text-dark);
@@ -107,14 +92,13 @@ h3 {
     font-size: 1.5rem;
 }
 
-p {
+p{
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
     transition: color var(--transition-normal);
 }
 
-/* Arabic Text Support */
-.arabic {
+.dua-text {
     font-family: 'Amiri', 'Arabic Typesetting', 'Traditional Arabic', serif;
     direction: rtl;
     text-align: right;
@@ -122,16 +106,14 @@ p {
     line-height: 2;
 }
 
-/* ============================================
-   5. HEADER & NAVIGATION
-   ============================================ */
+/* header & nav section */
 header {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     padding: var(--spacing-md) var(--spacing-lg);
     box-shadow: 0 2px 10px var(--shadow);
     position: sticky;
-    top: 0;
+    top:0;
     z-index: 1000;
     transition: all var(--transition-normal);
     border-bottom: 2px solid var(--primary-green);
@@ -167,7 +149,7 @@ header {
 nav {
     display: flex;
     gap: var(--spacing-md);
-    align-items: center;
+    align-items: center ;
 }
 
 .nav-link {
@@ -185,9 +167,7 @@ nav {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   6. THEME TOGGLE BUTTON
-   ============================================ */
+/* theme toggle btn */
 .theme-toggle {
     background: var(--primary-green);
     color: var(--white);
@@ -205,7 +185,7 @@ nav {
 }
 
 .theme-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
+    transform: scale(1.2) rotate(15deg);
     box-shadow: 0 6px 15px var(--shadow);
 }
 
@@ -213,13 +193,12 @@ nav {
     transform: scale(0.95);
 }
 
-/* ============================================
-   7. CONTAINER & LAYOUT
-   ============================================ */
+
+/* container & sections */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) ;
 }
 
 .section {
@@ -237,10 +216,7 @@ nav {
         transform: translateY(0);
     }
 }
-
-/* ============================================
-   8. CARDS
-   ============================================ */
+/* overall cards */
 .card {
     background: var(--card-bg);
     border-radius: var(--radius-md);
@@ -248,7 +224,7 @@ nav {
     margin-bottom: var(--spacing-md);
     box-shadow: 0 4px 15px var(--shadow);
     transition: all var(--transition-normal);
-    border: 1px solid var(--soft-gray);
+    border: 1px solid var(--soft-gray)
 }
 
 .card:hover {
@@ -274,16 +250,13 @@ nav {
 
 .card-icon {
     font-size: 1.5rem;
-    color: var(--accent-green);
+     color: var(--accent-green);
 }
-
 .card-content {
     color: var(--text-light);
 }
 
-/* ============================================
-   9. BUTTONS
-   ============================================ */
+/* button */
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
@@ -328,18 +301,11 @@ nav {
     font-size: 1.1rem;
 }
 
-.btn-small {
-    padding: var(--spacing-xs) var(--spacing-md);
-    font-size: 0.9rem;
-}
-
 .btn:active {
     transform: scale(0.95);
 }
 
-/* ============================================
-   10. MOOD SELECTION CARDS
-   ============================================ */
+/* mood cards */
 .mood-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -354,14 +320,14 @@ nav {
     text-align: center;
     cursor: pointer;
     transition: all var(--transition-normal);
-    border: 2px solid transparent;
-    box-shadow: 0 4px 10px var(--shadow);
+    border: 2px solid transparent ;
+    box-shadow: 0 3px 12px var(--shadow);
 }
 
 .mood-card:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.05) translateY(-6px);
     border-color: var(--primary-green);
-    box-shadow: 0 8px 20px var(--shadow);
+    box-shadow:  0 8px 20px var(--shadow);
     background: var(--primary-green);
     color: var(--white);
 }
@@ -388,9 +354,7 @@ nav {
     font-size: 1rem;
 }
 
-/* ============================================
-   11. DUA & VERSE CARDS
-   ============================================ */
+/* dua section */
 .dua-card {
     background: linear-gradient(135deg, var(--card-bg) 0%, rgba(46, 125, 50, 0.1) 100%);
     border-radius: var(--radius-md);
@@ -402,7 +366,7 @@ nav {
 }
 
 .dua-card:hover {
-    transform: translateX(5px);
+    transform: translateY(5px);
     box-shadow: 0 6px 20px var(--shadow);
 }
 
@@ -419,52 +383,7 @@ nav {
     margin-top: var(--spacing-sm);
 }
 
-/* ============================================
-   12. FORMS & INPUTS
-   ============================================ */
-.form-group {
-    margin-bottom: var(--spacing-md);
-}
-
-label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea,
-select {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 2px solid var(--soft-gray);
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
-    background: var(--card-bg);
-    color: var(--text-dark);
-    transition: all var(--transition-fast);
-    font-family: inherit;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* ============================================
-   13. PRAYER TIMES CARD
-   ============================================ */
+/* prayer */
 .prayer-times {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -502,9 +421,7 @@ textarea {
     color: green;
 }
 
-/* ============================================
-   14. LOADING SPINNER
-   ============================================ */
+/* loading spiner */
 .loader {
     border: 4px solid var(--soft-gray);
     border-top: 4px solid var(--primary-green);
@@ -520,9 +437,7 @@ textarea {
     100% { transform: rotate(360deg); }
 }
 
-/* ============================================
-   15. FOOTER
-   ============================================ */
+/* footer */
 footer {
     background: var(--card-bg);
     padding: var(--spacing-lg);
@@ -556,9 +471,7 @@ footer {
     text-decoration: underline;
 }
 
-/* ============================================
-   16. RESPONSIVE DESIGN - MOBILE FIRST
-   ============================================ */
+/* responsive */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -598,6 +511,7 @@ footer {
     .btn {
         width: 100%;
         justify-content: center;
+        align-items: center;
     }
     
     .footer-links {
@@ -626,9 +540,6 @@ footer {
     }
 }
 
-/* ============================================
-   17. UTILITY CLASSES
-   ============================================ */
 .text-center {
     text-align: center;
 }
@@ -656,29 +567,3 @@ footer {
 .glow {
     box-shadow: 0 0 20px rgba(46, 125, 50, 0.5);
 }
-
-/* ============================================
-   18. SMOOTH SCROLLBAR STYLING (OPTIONAL)
-   ============================================ */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--soft-gray);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-green);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-green);
-}
-
-/* ============================================
-   END OF STYLES
-   Ready for your team to integrate! 🌸
-   ============================================ */
-
