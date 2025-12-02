@@ -498,6 +498,9 @@ textarea {
     font-weight: 700;
     color: var(--text-dark);
 }
+.tracker-item label{
+    color: green;
+}
 
 /* ============================================
    14. LOADING SPINNER
