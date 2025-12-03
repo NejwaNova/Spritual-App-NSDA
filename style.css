@@ -1,7 +1,7 @@
 /* ============================================
    1. CSS VARIABLES - COLOR PALETTE
    ============================================ */
-:root {
+   :root {
     /* Light Theme Colors */
     --primary-green: #2E7D32;
     --accent-green: #3FA796;
@@ -80,7 +80,7 @@ body {
 }
 
 /* ============================================
-   4. TYPOGRAPHY
+   4. heading styles
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -109,7 +109,7 @@ p {
 }
 
 /* Arabic Text Support */
-.arabic {
+.dua-text {
     font-family: 'Amiri', 'Arabic Typesetting', 'Traditional Arabic', serif;
     direction: rtl;
     text-align: right;
@@ -276,64 +276,9 @@ nav {
     color: var(--text-light);
 }
 
-/* ============================================
-   9. BUTTONS
-   ============================================ */
-.btn {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    text-decoration: none;
-    box-shadow: 0 3px 10px var(--shadow);
-}
-
-.btn-primary {
-    background: var(--primary-green);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    background: var(--accent-green);
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px var(--shadow);
-}
-
-.btn-secondary {
-    background: var(--card-bg);
-    color: var(--primary-green);
-    border: 2px solid var(--primary-green);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-green);
-    color: var(--white);
-    transform: scale(1.05);
-}
-
-.btn-large {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: 1.1rem;
-}
-
-.btn-small {
-    padding: var(--spacing-xs) var(--spacing-md);
-    font-size: 0.9rem;
-}
-
-.btn:active {
-    transform: scale(0.95);
-}
 
 /* ============================================
-   10. MOOD SELECTION CARDS
+   9. MOOD SELECTION CARDS
    ============================================ */
 .mood-grid {
     display: grid;
@@ -384,7 +329,7 @@ nav {
 }
 
 /* ============================================
-   11. DUA & VERSE CARDS
+   10. DUA & VERSE CARDS
    ============================================ */
 .dua-card {
     background: linear-gradient(135deg, var(--card-bg) 0%, rgba(46, 125, 50, 0.1) 100%);
@@ -416,7 +361,7 @@ nav {
 
 
 /* ============================================
-   13. PRAYER TIMES CARD
+   11. PRAYER TIMES CARD
    ============================================ */
 .prayer-times {
     display: grid;
@@ -453,7 +398,7 @@ nav {
 }
 
 /* ============================================
-   14. LOADING SPINNER
+   12. LOADING SPINNER
    ============================================ */
 .loader {
     border: 4px solid var(--soft-gray);
@@ -471,7 +416,7 @@ nav {
 }
 
 /* ============================================
-   15. FOOTER
+   13. FOOTER
    ============================================ */
 footer {
     background: var(--card-bg);
@@ -507,7 +452,7 @@ footer {
 }
 
 /* ============================================
-   16. RESPONSIVE DESIGN - MOBILE FIRST
+   14. RESPONSIVE DESIGN - MOBILE FIRST
    ============================================ */
 @media (max-width: 768px) {
     h1 {
@@ -577,7 +522,7 @@ footer {
 }
 
 /* ============================================
-   17. UTILITY CLASSES
+   15. UTILITY CLASSES
    ============================================ */
 .text-center {
     text-align: center;
@@ -608,7 +553,7 @@ footer {
 }
 
 /* ============================================
-   18. SMOOTH SCROLLBAR STYLING
+   16. SMOOTH SCROLLBAR STYLING
    ============================================ */
 ::-webkit-scrollbar {
     width: 10px;
