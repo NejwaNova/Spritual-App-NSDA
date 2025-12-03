@@ -6,7 +6,6 @@
     <title>Islamic Spiritual App</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -14,7 +13,6 @@
 
 <body>
 
-    <!-- Header -->
     <header>
         <div class="header-container">
             <a href="#" class="logo">
@@ -33,16 +31,13 @@
         </div>
     </header>
 
-    <!-- Main -->
     <main class="container">
 
-        <!-- Hero Section -->
         <section class="section">
             <h1 class="text-center">Welcome to Your Spiritual Journey</h1>
             <p class="text-center">Choose your mood and find the perfect guidance</p>
         </section>
 
-        <!-- Mood Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -67,7 +62,7 @@
                             <div class="mood-label">Anxious</div>
                         </div>
 
-                        <div class="mood-card" data-mood="unmotivated">
+                        <div class="mood-card" data-mood="tired">
                             <div class="mood-icon">😴</div>
                             <div class="mood-label">Tired</div>
                         </div>
@@ -86,7 +81,6 @@
             </div>
         </section>
 
-        <!-- Dua Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -98,16 +92,18 @@
                     <p class="dua-text arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
                     <p class="dua-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
                 </div>
-                    <div class="mt-md text-right">
-                         <button id="save-dua-btn" class="btn btn-primary btn-small">
-                            ☆ Save
-                        </button>
-                    </div>
+                
+                <div class="mt-md text-right">
+                    <button class="btn btn-primary btn-small save-dua-btn" 
+                            data-id="default-bismillah" 
+                            data-arabic="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" 
+                            data-translation="In the name of Allah, the Most Gracious, the Most Merciful">
+                        ☆ Save
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Prayer Times & Tracker Section -->
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -116,50 +112,36 @@
                 </div>
 
                 <div class="prayer-times">
-
                     <div class="prayer-item" data-prayer-name="fajr">
                         <div class="prayer-name">Fajr</div>
                         <div class="prayer-time">05:30</div>
-                        <button class="track-btn" data-prayer-name="fajr">Mark Complete</button>
                     </div>
-
                     <div class="prayer-item" data-prayer-name="dhuhr">
                         <div class="prayer-name">Dhuhr</div>
                         <div class="prayer-time">12:15</div>
-                        <button class="track-btn" data-prayer-name="dhuhr">Mark Complete</button>
                     </div>
-
                     <div class="prayer-item" data-prayer-name="asr">
                         <div class="prayer-name">Asr</div>
                         <div class="prayer-time">15:45</div>
-                        <button class="track-btn" data-prayer-name="asr">Mark Complete</button>
                     </div>
-
                     <div class="prayer-item" data-prayer-name="maghrib">
                         <div class="prayer-name">Maghrib</div>
                         <div class="prayer-time">18:20</div>
-                        <button class="track-btn" data-prayer-name="maghrib">Mark Complete</button>
                     </div>
-
                     <div class="prayer-item" data-prayer-name="isha">
                         <div class="prayer-name">Isha</div>
                         <div class="prayer-time">19:45</div>
-                        <button class="track-btn" data-prayer-name="isha">Mark Complete</button>
                     </div>
-
                 </div>
 
-            <!-- Added:tracker CTA -->
                 <div class="track-cta mt-md">
                     <a href="tracker.html" class="track-link" aria-label="Open prayer tracker">Open Prayer Tracker →</a>
                 </div>
             </div>
         </section>
-
         
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Islamic Spiritual App. Made with ❤️ by group 2</p>
@@ -171,14 +153,11 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/theme-toggle.js"></script>
     <script src="js/prayerTracker.js"></script>
     <script src="js/moodLogic.js"></script>
-
-    <script src="favorites.js"></script>
-    <script src="index-app.js"></script>
-
-    <script src="./moods.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/index-app.js"></script>
+    <script src="js/moodLogic.js"></script>
 </body>
 </html>

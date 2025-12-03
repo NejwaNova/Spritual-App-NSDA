@@ -1,10 +1,8 @@
-// FAVORITES FUNCTIONALITY Handles saving, loading, and removing favorites 
-
+// FAVORITES FUNCTIONALITY
 const STORAGE_KEY = 'spiritualFavorites';
 
 /**
- Loads favorites from localStorage.
- * @returns {Array<Object>} The array of favorite items.
+ * Loads favorites from localStorage.
  */
 function loadFavorites() {
     try {
@@ -18,7 +16,6 @@ function loadFavorites() {
 
 /**
  * Saves the current list of favorites to localStorage.
- * @param {Array<Object>} favorites - The array of favorite items to save.
  */
 function saveFavorites(favorites) {
     try {
@@ -30,31 +27,31 @@ function saveFavorites(favorites) {
 
 /**
  * Toggles a favorite item (add or remove) and updates the button/icon.
- * @param {string} id - Unique ID of the item (e.g., dua-1, verse-4).
- * @param {string} arabicText - The Arabic text of the dua/verse.
- * @param {string} translation - The English translation.
- * @param {HTMLElement} buttonElement - The button element that was clicked.
  */
 window.toggleFavorite = function(id, arabicText, translation, buttonElement) {
     const favorites = loadFavorites();
     const index = favorites.findIndex(fav => fav.id === id);
 
     if (index === -1) {
-        // Not found, so add it
+        // Not found, add it
         favorites.push({
             id: id,
             arabic: arabicText,
             translation: translation,
             savedAt: new Date().toISOString()
         });
+        
+        // Update UI to "Saved" state
         buttonElement.textContent = '★ Saved';
         buttonElement.classList.add('btn-secondary');
         buttonElement.classList.remove('btn-primary');
-        buttonElement.style.borderColor = 'var(--accent-green)'; // Minor style tweak for saved state
+        buttonElement.style.borderColor = 'var(--accent-green)'; 
         console.log(`Added favorite: ${id}`);
     } else {
-        // Found, so remove it
+        // Found, remove it
         favorites.splice(index, 1);
+        
+        // Update UI to "Save" state
         buttonElement.textContent = '☆ Save';
         buttonElement.classList.remove('btn-secondary');
         buttonElement.classList.add('btn-primary');
@@ -63,7 +60,8 @@ window.toggleFavorite = function(id, arabicText, translation, buttonElement) {
     }
 
     saveFavorites(favorites);
-    // If we're on the favorites page, re-render the list
+
+    // If we are currently on the favorites page, refresh the list immediately
     if (document.getElementById('favorites-list')) {
         renderFavoritesList();
     }
@@ -90,9 +88,8 @@ function renderFavoritesList() {
     }
 
     favorites.forEach(fav => {
-        // Create a reusable card structure for the favorite item
         const favoriteCard = document.createElement('div');
-        favoriteCard.className = 'dua-card fade-in'; // Reuse existing styling
+        favoriteCard.className = 'dua-card fade-in';
         favoriteCard.id = `favorite-${fav.id}`;
 
         const date = new Date(fav.savedAt).toLocaleDateString();
@@ -112,30 +109,30 @@ function renderFavoritesList() {
     });
 }
 
-// Initialize the rendering when the favorites page loads
+// INITIALIZATION LOGIC
 document.addEventListener('DOMContentLoaded', () => {
-    // Only run rendering logic if the favorites-list container is present
+
+    // 1. Render List if on Favorites Page
     if (document.getElementById('favorites-list')) {
         renderFavoritesList();
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Attach click event to all save buttons
-    const saveButtons = document.querySelectorAll('.save-dua-btn');
-    saveButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+    // 2. Global Event Listener for Save Buttons
+    // This handles clicks on ANY element with class 'save-dua-btn', 
+    // even if that element was created dynamically by JavaScript.
+    document.body.addEventListener('click', (event) => {
+        const btn = event.target.closest('.save-dua-btn');
+        
+        if (btn) {
             const id = btn.dataset.id;
             const arabic = btn.dataset.arabic;
             const translation = btn.dataset.translation;
 
-            toggleFavorite(id, arabic, translation, btn);
-        });
+            if (id && arabic && translation) {
+                toggleFavorite(id, arabic, translation, btn);
+            } else {
+                console.warn("Save button clicked but missing data attributes.");
+            }
+        }
     });
-
-    // Render favorites if on the favorites page
-    if (document.getElementById('favorites-list')) {
-        renderFavoritesList();
-    }
 });
-

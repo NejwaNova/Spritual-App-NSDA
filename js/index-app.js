@@ -32,5 +32,6 @@ function setupDuaOfTheDay() {
     });
 }
 
+
 // Run the setup when the document is ready
 document.addEventListener('DOMContentLoaded', setupDuaOfTheDay);
