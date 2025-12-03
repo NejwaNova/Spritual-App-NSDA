@@ -19,32 +19,42 @@ const RADIUS = 45;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 progressCircle.style.strokeDasharray = CIRCUMFERENCE;
 
-/* Load Checkbox State */
+/* Load Checkbox State with expiration check */
 function loadSaved() {
-    let saved = JSON.parse(localStorage.getItem("prayers")) || {};
+    const savedData = JSON.parse(localStorage.getItem("prayers")) || {};
+    const now = Date.now();
+    const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000; // ms in 24 hours
 
-    checkboxes.forEach(cb => {
-        cb.checked = saved[cb.dataset.name] || false;
-    });
-
+    if (savedData.timestamp && (now - savedData.timestamp > TWENTY_FOUR_HOURS)) {
+        // Data expired, clear localStorage
+        localStorage.removeItem("prayers");
+        // Reset checkboxes
+        checkboxes.forEach(cb => cb.checked = false);
+    } else {
+        // Apply saved states
+        checkboxes.forEach(cb => {
+            cb.checked = savedData[cb.dataset.name] || false;
+        });
+    }
     updateProgress();
 }
 loadSaved();
 
-/* Save State */
+/* Save State with timestamp */
 function saveState() {
-    let data = {};
+    const data = {};
     checkboxes.forEach(cb => data[cb.dataset.name] = cb.checked);
+    data.timestamp = Date.now();
     localStorage.setItem("prayers", JSON.stringify(data));
 }
 
 /* Update Progress Circle */
 function updateProgress() {
-    let count = [...checkboxes].filter(cb => cb.checked).length;
+    const count = [...checkboxes].filter(cb => cb.checked).length;
     progressText.textContent = `${count}/5`;
 
-    let percent = count / 5;
-    let offset = CIRCUMFERENCE - percent * CIRCUMFERENCE;
+    const percent = count / 5;
+    const offset = CIRCUMFERENCE - percent * CIRCUMFERENCE;
 
     progressCircle.style.strokeDashoffset = offset;
 }
@@ -66,34 +76,32 @@ resetBtn.addEventListener("click", () => {
 
 /* Next Prayer + Countdown */
 function findNextPrayer() {
-    let now = new Date();
+    const now = new Date();
 
-    for (let p of prayerTimes) {
-        let [h, m] = p.time.split(":");
-        let t = new Date();
+    for (const p of prayerTimes) {
+        const [h, m] = p.time.split(":");
+        const t = new Date();
         t.setHours(h, m, 0, 0);
-
         if (now < t) return p;
     }
     return prayerTimes[0];
 }
 
 function updateCountdown() {
-    let next = findNextPrayer();
+    const next = findNextPrayer();
     nextPrayerName.textContent = next.name;
     nextPrayerTime.textContent = next.time;
 
-    let now = new Date();
-    let [h, m] = next.time.split(":");
-    let nextTime = new Date();
+    const now = new Date();
+    const [h, m] = next.time.split(":");
+    const nextTime = new Date();
     nextTime.setHours(h, m, 0, 0);
-
     if (now > nextTime) nextTime.setDate(nextTime.getDate() + 1);
 
-    let diff = nextTime - now;
-    let hr = String(Math.floor(diff / 3600000)).padStart(2, "0");
-    let min = String(Math.floor(diff / 60000 % 60)).padStart(2, "0");
-    let sec = String(Math.floor(diff / 1000 % 60)).padStart(2, "0");
+    const diff = nextTime - now;
+    const hr = String(Math.floor(diff / 3600000)).padStart(2, "0");
+    const min = String(Math.floor(diff / 60000 % 60)).padStart(2, "0");
+    const sec = String(Math.floor(diff / 1000 % 60)).padStart(2, "0");
 
     countdown.textContent = `in ${hr}h ${min}m ${sec}s`;
 }
