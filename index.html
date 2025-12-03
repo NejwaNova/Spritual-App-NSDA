@@ -27,6 +27,7 @@
                 <a href="#" class="nav-link">Prayers</a>
                 <a href="#" class="nav-link">Duas</a>
                 <a href="#" class="nav-link">Mood</a>
+                <a href="favorites.html" class="nav-link">Favorites</a>
                 <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
             </nav>
         </div>
@@ -97,6 +98,12 @@
                     <p class="dua-text arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
                     <p class="dua-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
                 </div>
+                    <div class="mt-md text-right">
+                         <button id="save-dua-btn" class="btn btn-primary btn-small">
+                            ☆ Save
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -141,6 +148,11 @@
                     </div>
 
                 </div>
+
+            <!-- Added:tracker CTA -->
+                <div class="track-cta mt-md">
+                    <a href="tracker.html" class="track-link" aria-label="Open prayer tracker">Open Prayer Tracker →</a>
+                </div>
             </div>
         </section>
 
@@ -164,5 +176,9 @@
     <script src="js/prayerTracker.js"></script>
     <script src="js/moodLogic.js"></script>
 
+    <script src="favorites.js"></script>
+    <script src="index-app.js"></script>
+
+    <script src="./moods.js"></script>
 </body>
 </html>
