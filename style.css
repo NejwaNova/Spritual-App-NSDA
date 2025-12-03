@@ -396,6 +396,9 @@ nav {
     font-weight: 700;
     color: var(--text-dark);
 }
+.tracker-item label{
+    color: green;
+}
 
 /* ============================================
    12. LOADING SPINNER

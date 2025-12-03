@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Tracker</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f4d1c;
+    color: rgb(203, 206, 24);
+}
+
+.container {
+    width: 92%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:30px ;
+    font-weight: 10px;
+}
+
+.top-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #00473F;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(37, 37, 37, 0.35);
+}
+
+/* Next Prayer Card */
+.next-card h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+
+/* Progress Circle */
+.circle-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: auto;
+}
+
+.progress-ring-bg {
+    stroke: #003d35;
+    stroke-width: 10;
+    fill: none;
+}
+
+.progress-ring-fill {
+    stroke: #00c780;
+    stroke-width: 10;
+    fill: none;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 32px;
+    left: 35px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.progress-label {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* Prayer Items */
+.prayer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prayer-item {
+    background: #00463D;
+    padding: 14px 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
+}
+
+.prayer-item input {
+    width: 20px;
+    height: 20px;
+}
+
+#resetBtn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #00c47a;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Today’s Prayers</h1>
+
+        <div class="top-cards">
+
+            <!-- NEXT PRAYER CARD -->
+            <div class="card next-card">
+                <p class="label">Next</p>
+                <h2 id="nextPrayerName">--</h2>
+                <p id="nextPrayerTime">--</p>
+                <p id="countdown">--</p>
+            </div>
+
+            <!-- PROGRESS CIRCLE CARD -->
+            <div class="card progress-card">
+                <div class="circle-container">
+                    <svg class="progress-ring" width="110" height="110">
+                        <circle class="progress-ring-bg" cx="55" cy="55" r="45"/>
+                        <circle class="progress-ring-fill" cx="55" cy="55" r="45"/>
+                    </svg>
+                    <div class="progress-text" id="progressText">0/5</div>
+                </div>
+                <p class="progress-label">prayed</p>
+            </div>
+
+        </div>
+
+        <!-- Prayer List -->
+        <div class="prayer-list">
+
+            <label class="prayer-item">
+                <span>✨ Fajr</span>
+                <span>05:09</span>
+                <input type="checkbox" class="prayer-check" data-name="Fajr">
+            </label>
+
+            <label class="prayer-item">
+                <span>☀️ Dhuhr</span>
+                <span>12:15</span>
+                <input type="checkbox" class="prayer-check" data-name="Dhuhr">
+            </label>
+
+            <label class="prayer-item">
+                <span>🌤️ Asr</span>
+                <span>15:37</span>
+                <input type="checkbox" class="prayer-check" data-name="Asr">
+            </label>
+
+            <label class="prayer-item">
+                <span>🌆 Maghrib</span>
+                <span>18:08</span>
+                <input type="checkbox" class="prayer-check" data-name="Maghrib">
+            </label>
+
+            <label class="prayer-item">
+                <span>🌙 Isha</span>
+                <span>19:18</span>
+                <input type="checkbox" class="prayer-check" data-name="Isha">
+            </label>
+
+        </div>
+
+        <button id="resetBtn">Mark all as unprayed</button>
+
+    </div>
+
+<script src="tracker.js"></script>
+</body>
+</html>
